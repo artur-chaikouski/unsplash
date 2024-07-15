@@ -1,0 +1,30 @@
+<!-- templates/parts/image-slider.twig -->
+<div class="slider-image">
+    <div class="slider-image__wrap">
+        {% if title %}
+            <h1 class="slider-image__wrap_title">{{ title }}</h1>
+        {% endif %}
+        {% if description %}
+            <p class="slider-image__wrap_desc">{{ description }}</p>
+        {% endif %}
+        {% if images %}
+            <div class="slider-image__wrap_swiper">
+                <div class="swiper-wrapper">
+                    {% for photo in images %}
+                        <div class="slider-image__wrap_swiper-img swiper-slide">
+                            <img src="{{ photo.urls.small }}" alt="{{ photo.alt_description }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        {% endif %}
+        {% if error %}
+            <p class="slider-image__wrap_error">
+                {{ error }}
+            </p>
+        {% endif %}
+    </div>
+</div>

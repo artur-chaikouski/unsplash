@@ -1,0 +1,13 @@
+<!-- templates/header.twig -->
+<!DOCTYPE html>
+<html {{ language_attributes() }}>
+<head>
+    <meta charset="{{ bloginfo('charset') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ wp_title('') }}</title>
+    <link rel="stylesheet" href="{{ bloginfo('stylesheet_url') }}">
+    {{ wp_head()|raw }}
+</head>
+<body {{ body_class() }}>
+
+{{ logo }}
